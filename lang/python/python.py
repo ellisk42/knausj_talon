@@ -15,6 +15,7 @@ ctx.lists["user.code_functions"] = {
     "length": "len",
     "list": "list",
     "print": "print",
+    "dictionary": "dict",
     "range": "range",
     "set": "set",
     "split": "split",
@@ -142,7 +143,9 @@ class UserActions:
     def code_operator_indirection():           actions.auto_insert('')
     def code_operator_address_of():            actions.auto_insert('')
     def code_operator_structure_dereference(): actions.auto_insert('')
-    def code_operator_lambda():                actions.auto_insert('')
+    def code_operator_lambda():
+        actions.auto_insert('lambda :')
+        actions.key("left")
     def code_operator_subscript():
         actions.insert('[]')
         actions.key('left')
@@ -165,6 +168,7 @@ class UserActions:
     def code_operator_less_than():                       actions.auto_insert(' < ')
     def code_operator_less_than_or_equal_to():           actions.auto_insert(' <= ')
     def code_operator_and():                             actions.auto_insert(' and ')
+    def code_operator_not():                             actions.auto_insert('not ')
     def code_operator_or():                              actions.auto_insert(' or ')
     def code_operator_bitwise_and():                     actions.auto_insert(' & ')
     def code_operator_bitwise_and_assignment():          actions.auto_insert(' &= ')

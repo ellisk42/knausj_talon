@@ -6,6 +6,18 @@ ctx.matches = r"""
 os: linux
 """
 
+@ctx.action_class('user')
+class CustomDefault:
+    def find_reverse():
+        "Begins a reverse search."
+        actions.key('ctrl-f')
+    def file_open():
+        "open a file"
+        actions.key('ctrl-o')
+    def delete_forward():
+        "delete the thing forward"
+        actions.key("delete")
+
 @ctx.action_class('edit')
 class EditActions:
     def copy():
@@ -111,6 +123,8 @@ class EditActions:
         actions.key('ctrl-y')
     def right():
         actions.key('right')
+    def open():
+        actions.key('ctrl-o')
     def save():
         actions.key('ctrl-s')
     def save_all():

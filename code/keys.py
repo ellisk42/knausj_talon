@@ -54,6 +54,11 @@ def letter(m) -> str:
     "One letter key"
     return m.letter
 
+@mod.capture(rule="{self.option_letter}")
+def option_letter(m) -> str:
+    "One option letter key"
+    return m.option_letter
+
 
 @mod.capture(rule="{self.special_key}")
 def special_key(m) -> str:
@@ -124,6 +129,8 @@ if app.platform  == "mac":
 ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
+ctx.lists["self.option_letter"] = {f"option {name}": f" -{letter} "
+                                   for name, letter in alphabet.items() }
 
 # `punctuation_words` is for words you want available BOTH in dictation and as
 # key names in command mode. `symbol_key_words` is for key names that should be
@@ -145,11 +152,12 @@ punctuation_words = {
     "exclamation mark": "!",
     "exclamation point": "!",
     "dollar sign": "$",
+    "money": "$",
     "asterisk": "*",
     "hash sign": "#",
     "number sign": "#",
     "percent sign": "%",
-    "at sign": "@",
+    "phone sign": "@",
     "and sign": "&",
     "ampersand": "&",
 }
@@ -171,7 +179,7 @@ symbol_key_words = {
     "plus": "+",
     "tilde": "~",
     "bang": "!",
-    "dollar": "$",
+#    "dollar": "$",
     "down score": "_",
     "under score": "_",
     "paren": "(",
@@ -190,8 +198,8 @@ symbol_key_words = {
     "R angle": ">",
     "right angle": ">",
     "greater than": ">",
-    "star": "*",
-    "pound": "#",
+    "splat": "*",
+#    "pound": "#",
     "hash": "#",
     "percent": "%",
     "caret": "^",

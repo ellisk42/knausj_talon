@@ -21,8 +21,10 @@ git cherry pick skip: "git cherry-pick --skip "
 git clone: "git clone "
 # Leave \n out for confirmation since the operation is destructive
 git clean everything: "git clean -dfx"
-git commit message <user.text>: "git commit -m '{text}'"
-git commit: "git commit\n"
+#git commi#t message <user.text>: "git commit -m '{text}'"
+git commit:
+    insert("git commit -am \"\"")
+    key(left)
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
 git diff cached: "git diff --cached\n"

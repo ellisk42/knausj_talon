@@ -1,13 +1,19 @@
-find it:
-    edit.find()
+club:
+	key(ctrl-backspace)
+
+#find it:
+#    edit.find()
 
 next one:
     edit.find_next()
 
 go word left:
     edit.word_left()
+backward: edit.word_left()
 
 go word right:
+    edit.word_right()
+forward:
     edit.word_right()
 
 go left:
@@ -180,6 +186,9 @@ copy word right:
     edit.copy()
 
 copy line:
+    edit.select_line()
+    edit.copy()
+windshield:
     edit.select_line()
     edit.copy()
 
