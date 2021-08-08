@@ -70,10 +70,6 @@ popcorn:
 buffers:
       key(ctrl-x)
       key(ctrl-b)
-lepton:
-      key(ctrl-x)
-      key(k)
-      key(enter)
 kill shell:
       key(ctrl-x)
       key(k)
@@ -139,4 +135,13 @@ spin:
 	key(enter)
 	key(tab)
 	
-	
+option <user.key>:
+       insert(" -")
+       key(key)
+       insert(" ")
+
+teller <digits>:
+       key(alt-g)
+       key(g)
+       insert(digits)
+       key(enter)

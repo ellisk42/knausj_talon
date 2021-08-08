@@ -9,6 +9,10 @@
 ^force are language$: user.code_set_language_mode("r")
 ^force talon [language]$: user.code_set_language_mode("talon")
 ^clear language modes$: user.code_clear_language_mode()
+^force latex$:
+       user.code_clear_language_mode()
+       user.force_latex()
+^clear latex$: user.clear_latex()
 [enable] debug mode:
     mode.enable("user.gdb")
 disable debug mode:

@@ -29,3 +29,7 @@ take screenshot pictures:
      user.system_command_nb("xfce4-screenshooter -s ~/Pictures  -r &")
 
 slash et cetera: "/etc"
+lepton: user.close_buffer()
+#      key(ctrl-x)
+#      key(k)
+#      key(enter)

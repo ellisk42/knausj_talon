@@ -24,6 +24,7 @@ file save: edit.save()
 file open: user.file_open()
 sword: user.delete_forward()
 scorch: edit.find()
+roach: user.find_reverse()
 wipe:
 	key(shift-end)
 	edit.cut()

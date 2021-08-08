@@ -17,6 +17,8 @@ class CustomDefault:
     def delete_forward():
         "delete the thing forward"
         actions.key("delete")
+    def close_buffer():
+        actions.key("ctrl-w")
 
 @ctx.action_class('edit')
 class EditActions:

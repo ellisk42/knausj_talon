@@ -22,6 +22,10 @@ class CustomEmacs:
     def delete_forward():
         "delete the thing forward"  
         actions.key("ctrl-d")
+    def close_buffer():
+        actions.key("ctrl-x")
+        actions.key("k")
+        actions.key("enter")
         
         
 @ctx.action_class('edit')
@@ -90,7 +94,7 @@ class EditActions:
         actions.key('ctrl-home')
     def find(text: str=None):
         actions.key('ctrl-s')
-        actions.actions.insert(text)
+        if text is not None: actions.insert(text)
     def find_next():
         actions.key('ctrl-s')
         #action(edit.find_previous):

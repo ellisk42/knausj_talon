@@ -47,9 +47,10 @@ inside quotes:
 inside (graves | back ticks):
 	insert("``")
 	key(left)
-angle that:
-    text = edit.selected_text()
-    user.paste("<{text}>")
+inside angles:
+    insert("<>")
+    key(left)
+    
 (square | square bracket) that:
     text = edit.selected_text()
     user.paste("[{text}]")

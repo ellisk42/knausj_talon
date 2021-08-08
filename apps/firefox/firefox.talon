@@ -1,4 +1,5 @@
 app: firefox
+app: chrome
 -
 tag(): browser
 tag(): user.tabs
