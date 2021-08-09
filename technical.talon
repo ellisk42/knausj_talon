@@ -7,7 +7,7 @@ app.name: Emacs
 tag(): terminal
 tag(): user.git
 
-
+emacs: "emacs -nw "
 history:
 	insert("history | grep ")
 explore:
