@@ -7,19 +7,19 @@ ctx = Context()
 digits = "zero one two three four five six seven eight nine".split()
 teens = "ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
 tens = "twenty thirty forty fifty sixty seventy eighty ninety".split()
-scales = "hundred thousand million billion trillion quadrillion quintillion sextillion septillion octillion nonillion decillion".split()
+scales = "hundred thousand".split()
 
 digits_map = {n: i for i, n in enumerate(digits)}
-digits_map["oh"] = 0
+#digits_map["oh"] = 0
 teens_map = {n: i + 10 for i, n in enumerate(teens)}
 tens_map = {n: 10 * (i + 2) for i, n in enumerate(tens)}
 scales_map = {n: 10 ** (3 * (i+1)) for i, n in enumerate(scales[1:])}
 scales_map["hundred"] = 100
 
 numbers_map = digits_map.copy()
-numbers_map.update(teens_map)
-numbers_map.update(tens_map)
-numbers_map.update(scales_map)
+# numbers_map.update(teens_map)
+# numbers_map.update(tens_map)
+# numbers_map.update(scales_map)
 
 def parse_number(l: List[str]) -> str:
     """Parses a list of words into a number/digit string."""

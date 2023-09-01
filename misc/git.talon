@@ -25,6 +25,9 @@ git clean everything: "git clean -dfx"
 git commit:
     insert("git commit -am \"\"")
     key(left)
+git amend message:
+    insert("git commit --amend -m \"\"")
+    key(left)
 git diff (colour|color) words: "git diff --color-words "
 git diff: "git diff "
 git diff cached: "git diff --cached\n"
@@ -32,7 +35,7 @@ git fetch: "git fetch\n"
 git fetch all: "git fetch --all\n"
 git fetch <user.text>: "git fetch {text}"
 git fetch prune: "git fetch --prune\n"
-git in it: "git init\n"
+git initialize: "git init\n"
 git log all: "git log\n"
 git log all changes: "git log -c\n"
 git log: "git log "

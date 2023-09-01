@@ -6,8 +6,10 @@ app.name: Emacs
 -
 tag(): terminal
 tag(): user.git
-
+new folder: "mkdir "
 emacs: "emacs -nw "
+binning: "bin/"
+slash temporary: "/tmp"
 history:
 	insert("history | grep ")
 explore:
@@ -16,10 +18,15 @@ grape:
       insert("grep ")
 recursive grape:
       insert("rgrep ")
+M D five sum:
+    insert("md5sum ")
 tailing: insert("tail ")
 heading: insert("head ")
 kit cat: insert("cat ")
 pythonic: insert("python ")
+run file browser:
+    insert("thunar &")
+    key(left)
       
 chirp: key(ctrl-l)
 chirp top:
@@ -29,7 +36,8 @@ chirp bot:
       key(ctrl-l)
       key(ctrl-l)
       key(ctrl-l)  
-
+see H mod: "chmod "
+jupiter notebook: "jupyter notebook"
 scout: insert("ls ")
 witchcraft: insert("which ")
 poseidon: insert("sudo ")
@@ -145,3 +153,5 @@ teller <digits>:
        key(g)
        insert(digits)
        key(enter)
+
+Jason: "json"

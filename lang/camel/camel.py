@@ -5,23 +5,23 @@ from talon import Context, Module, actions, settings
 mod = Module()
 ctx = Context()
 ctx.matches = r"""
-mode: user.python
+mode: user.camel
 mode: user.auto_lang
-and code.language: python
+and code.language: camel
 """
 ctx.lists["user.code_functions"] = {
-    "enumerate": "enumerate",
-    "integer": "int",
-    "length": "len",
-    "list": "list",
-    "print": "print",
-    "dictionary": "dict",
-    "range": "range",
-    "set": "set",
-    "split": "split",
-    "string": "str",
-    "update": "update",
-    "zipper": "zip",
+    # "enumerate": "enumerate",
+    # "integer": "int",
+    # "length": "len",
+    # "list": "list",
+    # "print": "print",
+    # "dictionary": "dict",
+    # "range": "range",
+    # "set": "set",
+    # "split": "split",
+    # "string": "str",
+    # "update": "update",
+    # "zipper": "zip",
 }
 
 """a set of fields used in python docstrings that will follow the
@@ -49,9 +49,7 @@ type_list = {
     "integer": "int",
     "string": "str",
     "none": "None",
-    "dick": "Dict",
     "float": "float",
-    "any": "Any",
     "tuple": "Tuple",
     "union": "UnionAny",
     "iterable": "Iterable",
@@ -63,8 +61,8 @@ type_list = {
     "no return": "NoReturn",
 }
 
-mod.list("python_type_list", desc="python types")
-ctx.lists["user.python_type_list"] = type_list
+mod.list("camel_type_list", desc="camel types")
+ctx.lists["user.camel_type_list"] = type_list
 
 exception_list = [
     "BaseException",
@@ -145,13 +143,11 @@ class UserActions:
     def code_operator_address_of():            actions.auto_insert('')
     def code_operator_structure_dereference(): actions.auto_insert('')
     def code_operator_lambda():
-        actions.auto_insert('lambda :')
-        actions.key("left")
+        actions.auto_insert('fun ')
     def code_operator_subscript():
         actions.insert('[]')
         actions.key('left')
     def code_operator_assignment():                      actions.auto_insert(' = ')
-    def code_operator_in():                      actions.auto_insert(' in ')
     def code_operator_subtraction():                     actions.auto_insert(' - ')
     def code_operator_subtraction_assignment():          actions.auto_insert(' -= ')
     def code_operator_addition():                        actions.auto_insert(' + ')
@@ -187,20 +183,19 @@ class UserActions:
     def code_is_null():                                  actions.auto_insert(' is None')
     def code_is_not_null():                              actions.auto_insert(' is not None')
     def code_state_if():
-        actions.insert('if :')
-        actions.key('left')
+        actions.insert('if  then')
+        for _ in range(5): actions.edit.left()
     def code_state_else_if():
         actions.insert('elif :')
         actions.key('left')
     def code_state_else():
-        actions.insert('else:')
-        actions.key('enter')
+        actions.insert(' else ')
     def code_state_switch():
         actions.insert('switch ()')
         actions.edit.left()
     def code_state_case():
-        actions.insert('case \nbreak;')
-        actions.edit.up()
+        actions.insert('match  with')
+        for _ in range(5): actions.edit.left()
     def code_state_for(): actions.auto_insert('for ')
     def code_state_for_each():
         actions.insert('for in ')
@@ -212,7 +207,7 @@ class UserActions:
         actions.insert('while :')
         actions.edit.left()
     def code_type_class(): actions.auto_insert('class ')
-    def code_import():     actions.auto_insert('import ')
+    def code_import():     actions.auto_insert('open ')
     def code_from_import():
         actions.insert('from import ')
         actions.key('left')

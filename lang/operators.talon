@@ -12,7 +12,7 @@ op lambda: user.code_operator_lambda()
 op subscript: user.code_operator_subscript()
 
 #assignment
-op (equals | assign): user.code_operator_assignment()
+assignment: user.code_operator_assignment()
 
 #math operators
 op (minus | subtract): user.code_operator_subtraction()
@@ -28,17 +28,17 @@ op mod equals: user.code_operator_modulo_assignment()
 (op (power | exponent) | to the power [of]): user.code_operator_exponent()
 
 #comparison operators
-(op | is) equal: user.code_operator_equal()
-(op | is) not equal: user.code_operator_not_equal()
-(op | is) (greater | more): user.code_operator_greater_than()
-(op | is) (less | below) [than]: user.code_operator_less_than()
-(op | is) greater [than] or equal: user.code_operator_greater_than_or_equal_to()
-(op | is) less [than] or equal: user.code_operator_less_than_or_equal_to()
-(op | is) in: user.code_operator_in()
+congo: user.code_operator_equal()
+not congo: user.code_operator_not_equal()
+major: user.code_operator_greater_than()
+minor: user.code_operator_less_than()
+maybe major: user.code_operator_greater_than_or_equal_to()
+maybe minor: user.code_operator_less_than_or_equal_to()
+member: user.code_operator_in()
 
 #logical operators
-(op | logical) and: user.code_operator_and()
-(op | logical) or: user.code_operator_or()
+logical and: user.code_operator_and()
+logical or: user.code_operator_or()
 
 #bitwise operators
 [op] bitwise and: user.code_operator_bitwise_and()

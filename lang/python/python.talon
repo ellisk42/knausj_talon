@@ -5,6 +5,7 @@ and code.language: python
 tag(): user.code_operators
 tag(): user.code_comment
 tag(): user.code_generic
+tag(): user.anaconda
 settings():
     user.code_private_function_formatter = "SNAKE_CASE"
     user.code_protected_function_formatter = "SNAKE_CASE"
@@ -19,6 +20,13 @@ duh fun:
     insert("def ():")
     key(left)
     key(left)
+    key(left)
+duh static fun:
+    insert("@staticmethod")
+    key(enter)
+    insert("def ():")
+    key(left)
+    key(left)
     key(left)    
 state try: "try:\n"
 state except: "except "
@@ -27,13 +35,18 @@ self taught: "self."
 pie test: "pytest"
 state past: "pass"
 assertion: "assert "
+nonlocal: "nonlocal "
+
+
+
 
 indent region:
        key(ctrl-c)
-       key(shift-dot)
+       insert(">")
 unindent region:
        key(ctrl-c)
-       key(shift-comma)
+       insert("<")
+       
 
 deaf class:
      insert("class ():")
@@ -45,9 +58,19 @@ deaf class:
      key(left)
      key(left)
      key(left)
-
+define argument parser:
+       insert("import argparse")
+       key(enter)
+       key(tab)
+       insert('parser = argparse.ArgumentParser(description = "")')
+       key(enter)
+       key(tab)
+       insert('arguments = parser.parse_args()')
+       key(enter)
+       key(tab)
 isaac: " is "
-inside: " in "
+not member: " not in "
+
 iter items: ".items()"
 print:
 	insert("print()")
@@ -60,10 +83,19 @@ magical:
 	insert("____")
 	key(left)
 	key(left)
+is instance:
+	insert("isinstance()")
+	key(left)
 
 summation:
 	insert("sum()")
 	key(left)
+for all:
+	insert("all()")
+	key(left)
+there exists:
+	insert("any()")
+	key(left)	
 minimization:
 	insert("min()")
 	key(left)
@@ -78,6 +110,8 @@ comprehend:
 	key(left)
 
 torch E: "torch"
+tensor board log: "tensorboard --logdir "
+tensor board lightning log: "tensorboard --logdir lightning_logs/"
 dot unsqueeze:
     insert(".unsqueeze()")
     key(left)
@@ -87,7 +121,14 @@ dot squeeze:
 range:
     insert("range()")
     key(left)
+absolute value:
+    insert("abs()")
+    key(left)
 import torch: "import torch\nimport torch.nn as nn\nimport torch.nn.functional as F\n"
+import plotting: "import matplotlib.pyplot as plt\n"
+import numb pie: "import numpy as np\n"
+numb pie dot: "np."
+plot dot: "plt."
 debugger set trace: "import pdb; pdb.set_trace()\n\t"
 deaf main:
      insert("if __name__ == '__main__':")
