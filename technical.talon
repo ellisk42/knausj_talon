@@ -1,15 +1,14 @@
-#os: linux
+os: linux
 app.name: Xfce4-terminal
 app.name: xfce4-terminal
 app.name: emacs
 app.name: Emacs
 app.name: code
-app.name: Visual Studio Code
-app: vscode
 app.name: Code
 -
-tag(): terminal
 tag(): user.git
+tag(): terminal
+
 new folder: "mkdir "
 emacs: "emacs -nw "
 binning: "bin/"
