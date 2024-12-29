@@ -133,6 +133,12 @@ make tabular:
 make figure:
      user.latex_region("figure")
 
+clever reference:
+    user.latex_macro("Cref")
+    key("{")
+    key("}")
+    key(left)
+
 text width: user.latex_macro("textwidth")
 summation: user.latex_macro("sum")
 product: user.latex_macro("prod")

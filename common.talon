@@ -20,7 +20,7 @@ looking forward to it kevin:
     insert("Looking forward to it,")
     key(enter)
     insert("Kevin")
-undergraduate sign off: "-- Prof Ellis"
+undergraduate sign off: " Prof Ellis"
 cornell email: "kellis@cornell.edu"
 google email: "ellisk42@gmail.com"
 greetings: "Hi "
